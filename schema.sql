@@ -1,0 +1,12 @@
+DROP TABLE IF EXISTS payments;
+
+CREATE TABLE payments (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  provider TEXT NOT NULL,
+  tx_code TEXT UNIQUE NOT NULL,
+  amount REAL NOT NULL,
+  customer_name TEXT NOT NULL,
+  customer_phone TEXT NOT NULL,
+  raw_sms TEXT NOT NULL,
+  created_at DATETIME DEFAULT CURRENT_TIMESTAMP
+);
